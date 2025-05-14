@@ -30,6 +30,7 @@ namespace MenuesBuild
 
         protected void ToolsSpellingHints_Click(object sender, RoutedEventArgs args)
         {
+<<<<<<< HEAD
             string errorHints = string.Empty;
 
             SpellingError error = txtData.GetSpellingError(txtData.CaretIndex);
@@ -55,6 +56,17 @@ namespace MenuesBuild
         protected void MouseLeaveArea(object sender, RoutedEventArgs args)
         {
             statBarText.Text = "Ready";
+=======
+        }
+        protected void MouseEnterExitArea(object sender, RoutedEventArgs args)
+        {
+        }
+        protected void MouseEnterToolsHintsArea(object sender, RoutedEventArgs args)
+        {
+        }
+        protected void MouseLeaveArea(object sender, RoutedEventArgs args)
+        {
+>>>>>>> b01f0316c06628f10a0dd0e7049e531ee489d8c5
         }
     }
 }

@@ -54,4 +54,8 @@ TestResult.xml
 nunit-*.xml
 
 # vs
+<<<<<<< HEAD
 .vs
+=======
+.vs
+>>>>>>> b01f0316c06628f10a0dd0e7049e531ee489d8c5
