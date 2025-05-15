@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.IO;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -55,6 +56,36 @@ namespace MenuesBuild
         protected void MouseLeaveArea(object sender, RoutedEventArgs args)
         {
             statBarText.Text = "Ready";
+        }
+
+        private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            var openDlg = new OpenFileDialog { Filter = "Text Files |*.txt" };
+            if (true == openDlg.ShowDialog())
+            {
+                string dataFromFile = File.ReadAllText(openDlg.FileName);
+                txtData.Text = dataFromFile;
+            }
+        }
+
+        private void CommandBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+        }
+
+        private void CommandBinding_Executed_1(object sender, ExecutedRoutedEventArgs e)
+        {
+            var saveDlg = new SaveFileDialog { Filter = "Text Files | *.txt" };
+
+            if (true == saveDlg.ShowDialog())
+            {
+                File.WriteAllText(saveDlg.FileName, txtData.Text);
+            }
+        }
+
+        private void CommandBinding_CanExecute_1(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
         }
     }
 }
